@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlayer.Service", "Nlayer.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlayer.API", "Nlayer.API\Nlayer.API.csproj", "{D6B4F7C4-60C7-4777-96F7-228A1319A16E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlayer.Caching", "Nlayer.Caching\Nlayer.Caching.csproj", "{70246558-AA12-4370-B97A-D064EDE741F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D6B4F7C4-60C7-4777-96F7-228A1319A16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6B4F7C4-60C7-4777-96F7-228A1319A16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6B4F7C4-60C7-4777-96F7-228A1319A16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70246558-AA12-4370-B97A-D064EDE741F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70246558-AA12-4370-B97A-D064EDE741F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70246558-AA12-4370-B97A-D064EDE741F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70246558-AA12-4370-B97A-D064EDE741F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
