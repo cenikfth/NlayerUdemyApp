@@ -22,7 +22,7 @@ namespace Nlayer.Repository.Seeds
             },
             new ProductFeature 
             { 
-                Id = 1,
+                Id = 2,
                 Color = "Mavi",
                 Height = 300,
                 Width = 400,
