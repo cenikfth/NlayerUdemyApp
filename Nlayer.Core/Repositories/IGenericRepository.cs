@@ -6,7 +6,7 @@ namespace Nlayer.Core.Repositories
     { 
         Task<T> GetByIdAsync(int id);
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
-        IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetAll();
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression);
         Task AddRangeAsync (IEnumerable<T> entities);
         Task AddAsync (T entity);
