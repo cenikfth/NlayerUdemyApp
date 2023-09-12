@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Nlayer.Core;
+using Nlayer.Core.Models;
 
 namespace Nlayer.Repository.Seeds
 {

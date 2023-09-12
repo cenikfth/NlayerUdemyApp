@@ -5,7 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nlayer.Core
+namespace Nlayer.Core.Models
 {
     public abstract class BaseEntity
     {
