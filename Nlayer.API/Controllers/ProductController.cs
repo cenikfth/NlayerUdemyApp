@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Nlayer.API.Filters;
 using Nlayer.Core.DTOs;
 using Nlayer.Core.Models;
 using Nlayer.Core.Services;
@@ -26,7 +27,7 @@ namespace Nlayer.API.Controllers
         
         }
 
-
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
         [HttpGet]
         public async Task<IActionResult> All()
         {
@@ -35,6 +36,8 @@ namespace Nlayer.API.Controllers
 
             return CreateActionResult(CustomResponseDto<List<ProductDto>>.Success(200, productsDtos));
         }
+
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
