@@ -1,19 +1,32 @@
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Nlayer.API.Filters;
+using Nlayer.API.MidedleWares;
+using Nlayer.Core.Repositories;
+using Nlayer.Core.Services;
 using Nlayer.Core.UnitOfWorks;
 using Nlayer.Repository;
-using System.Reflection;
-using Nlayer.Repository.UnitOfWorks;
-using Nlayer.Core.Repositories;
 using Nlayer.Repository.Repositories;
-using Nlayer.Core.Services;
-using Nlayer.Service.Services;
+using Nlayer.Repository.UnitOfWorks;
 using Nlayer.Service.Mapping;
+using Nlayer.Service.Services;
+using Nlayer.Service.Validations;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers(options =>  
+options.Filters.Add(new ValidateFilterAttribute()))
+    .AddFluentValidation(x => 
+    x.RegisterValidatorsFromAssemblyContaining<ProductDtoValidator>());
 
-builder.Services.AddControllers();
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -45,6 +58,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCustomException();
 
 app.UseAuthorization();
 
